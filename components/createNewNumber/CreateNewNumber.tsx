@@ -30,6 +30,8 @@ export const CreateNewNumber = (props: ICreateNewNumber) => {
     <View style={styles.container}>
       <BorderContainer title={title} color={whiteColor} />
       <CardContainer
+        resetButtonLabel="Reset"
+        submitButtonLabel="Submit"
         resetHandler={cancelNumber}
         submitHandler={submitNumber}
         title={CardTitle}

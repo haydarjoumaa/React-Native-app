@@ -5,6 +5,8 @@ import { ButtonUI } from "./ButtonUI";
 interface ICardContainer {
   children: React.ReactNode;
   title: String;
+  resetButtonLabel: String;
+  submitButtonLabel: String;
   resetHandler: () => void;
   submitHandler: () => void;
 }
@@ -15,8 +17,14 @@ export const CardContainer = (props: ICardContainer) => {
       <Text style={{ fontSize: 20, color: "white" }}>{props.title}</Text>
       {props.children}
       <View style={styles.buttonsContainer}>
-        <ButtonUI label="Reset" onClickHandler={props.resetHandler} />
-        <ButtonUI label="Submit" onClickHandler={props.submitHandler} />
+        <ButtonUI
+          label={props.resetButtonLabel}
+          onClickHandler={props.resetHandler}
+        />
+        <ButtonUI
+          label={props.submitButtonLabel}
+          onClickHandler={props.submitHandler}
+        />
       </View>
     </View>
   );
